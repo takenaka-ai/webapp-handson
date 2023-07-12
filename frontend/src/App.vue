@@ -6,7 +6,7 @@ import SyncvsAsync from './components/SyncvsAsync.vue'
 <template>
   <div>
     <h2>Web アプリケーションハンズオン</h2>
-    <a href="https://vuejs.org/" target="_blank">
+    <a href="https://github.com/takenaka-ai/webapp-handson" target="_blank">
       <img src="./assets/github-mark.svg" class="logo"/>
     </a>
   </div>
