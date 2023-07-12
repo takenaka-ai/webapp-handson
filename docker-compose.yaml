@@ -1,0 +1,22 @@
+version: '3.9'
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: ./frontend/Dockerfile
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./frontend:/home/frontend
+    command: sh -c "npm install && npm run dev"
+    ports:
+      - "5173:5173"
+  backend:
+    build:
+      context: .
+      dockerfile: ./backend/Dockerfile
+    volumes:
+      - ./backend:/home/backend
+    command: sh -c "pip install -r requirements.txt && uvicorn src.main:app --reload --host 0.0.0.0"
+    ports:
+      - "8000:8000"
